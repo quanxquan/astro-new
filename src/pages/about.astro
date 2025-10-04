@@ -10,6 +10,9 @@ const happy = true;
 const finished = false;
 const goal = 3;
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Documentation"];
+const skillColor = "teal";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 <html lang="zh-CN">
   <head>
@@ -17,6 +20,17 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Document
     <meta name="viewport" content="width=device-width" />
     <title>Astro</title>
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
   </head>
 <body>
     <a href="/">首页</a>
