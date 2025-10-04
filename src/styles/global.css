@@ -18,32 +18,85 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
-  color: #1e40af;
 }
 
-h2 {
-  color: #7c3aed;
-  font-size: 1.5rem;
+/* 导航样式 */
+
+/* Hamburger 菜单按钮 */
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+  display: block;
 }
 
-nav {
-  margin-bottom: 2rem;
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
+/* 移动端导航链接 */
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 0;
+  position: absolute;
+  background-color: #ff9776;
+  display: none;
+  margin: 0;
   padding: 1rem;
-  background-color: #e2e8f0;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
   text-decoration: none;
-  color: #374151;
-  background-color: #ffffff;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
 }
 
-nav a:hover {
-  background-color: #ddd6fe;
-  color: #5b21b6;
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #e6875e;
+  border-radius: 4px;
+}
+
+.expanded {
+  display: block;
+}
+
+/* 桌面端样式 */
+@media screen and (min-width: 636px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+    color: #374151;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: #ddd6fe;
+    color: #5b21b6;
+  }
 }
